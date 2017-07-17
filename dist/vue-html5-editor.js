@@ -1,7 +1,7 @@
 /**
- * Vue-html5-editor 2.0.8
+ * Vue-html5-editor 2.0.9
  * https://github.com/PeakTai/vue-html5-editor
- * build at Mon Jul 17 2017 17:37:21 GMT+0800 (中国标准时间)
+ * build at Mon Jul 17 2017 18:23:16 GMT+0800 (中国标准时间)
  */
 
 (function (global, factory) {
@@ -544,7 +544,7 @@ var dashboard$4 = {
     template: template$4,
     data: function data(){
         return {
-            version: "2.0.8"
+            version: "2.0.9"
         }
     }
 };
@@ -578,6 +578,8 @@ var dashboard$5 = {
     },
     methods: {
         createLink: function createLink(){
+            var this$1 = this;
+
             if (!this.url) {
                 return
             }
@@ -590,6 +592,7 @@ var dashboard$5 = {
             var aTag = stext.anchorNode.parentNode;
             this.$nextTick(function () {
                 aTag.setAttribute('target', '_blank');
+                this$1.$emit('change', this$1.$refs.content.innerHTML);
             });
             this.url = null;
         }
@@ -809,11 +812,16 @@ var dashboard$10 = {
           for (var i in this$1.list) {
             str += "<img class=\"test\" src=\"" + (this$1.list[i].url) + "\" alt=\"\"/>";
           }
-          this.$parent.execCommand(Command.INSERT_HTML, str);
-          this.$parent.$emit('sucmessage', '图片插入成功');
-          this.list = [];
-          this.$refs.upload.clearFiles();
-          this.btnState = true;
+          if (this.list.length > 9) {
+            this.$parent.$emit('errmessage', '单次上传最多十张图片');
+            return
+          } else {
+            this.$parent.execCommand(Command.INSERT_HTML, str);
+            this.$parent.$emit('sucmessage', '图片插入成功');
+            this.list = [];
+            this.$refs.upload.clearFiles();
+            this.btnState = true;
+          }
         },
         clear: function clear () {
           this.btnState = true;

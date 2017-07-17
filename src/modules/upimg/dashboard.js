@@ -54,11 +54,16 @@ export default {
           for (let i in this.list) {
             str += `<img class="test" src="${this.list[i].url}" alt=""/>`
           }
-          this.$parent.execCommand(Command.INSERT_HTML, str)
-          this.$parent.$emit('sucmessage', '图片插入成功')
-          this.list = []
-          this.$refs.upload.clearFiles()
-          this.btnState = true
+          if (this.list.length > 9) {
+            this.$parent.$emit('errmessage', '单次上传最多十张图片')
+            return
+          } else {
+            this.$parent.execCommand(Command.INSERT_HTML, str)
+            this.$parent.$emit('sucmessage', '图片插入成功')
+            this.list = []
+            this.$refs.upload.clearFiles()
+            this.btnState = true
+          }
         },
         clear () {
           this.btnState = true
