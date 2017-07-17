@@ -1,0 +1,20 @@
+<div>
+  <el-upload 
+  name="picture"
+  multiple="true"
+  ref="upload"
+  action="https://server.onloon.cc/bshop/config/pic/upload"
+  list-type="picture-card"
+  :on-preview="handlePictureCardPreview"
+  :on-remove="handleRemove"
+  :on-success="uploadSuccess"
+  :on-change="change"
+  :on-progress="progress">
+    <i class="el-icon-plus" id="add"></i>
+  </el-upload>
+  <el-dialog v-model="dialogVisible" size="tiny">
+    <img width="100%" :src="dialogImageUrl" alt="">
+  </el-dialog>
+  <el-button type="primary" @click="confirmUpload" :disabled="btnState">确定插入</el-button>
+  <el-button @click="clear">清空上传</el-button>
+</div>

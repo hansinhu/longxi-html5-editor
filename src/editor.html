@@ -1,0 +1,36 @@
+<div class="vue-html5-editor" :class="{'full-screen':fullScreen}">
+    <div class="toolbar" ref="toolbar">
+        <ul>
+            <template v-for="module in modules">
+                <li :title="locale[module.i18n]" @click="activeModule(module)">
+                    <span class="icon" :class="module.icon"></span>
+                    <template v-if="showModuleName === undefined ? defaultShowModuleName : showModuleName">
+                        &nbsp;{{locale[module.i18n]}}
+                    </template>
+                </li>
+            </template>
+        </ul>
+        <div class="dashboard" v-show="dashboard" ref="dashboard">
+            <keep-alive>
+                <div v-show="dashboard" :is="dashboard"></div>
+            </keep-alive>
+        </div>
+    </div>
+    <div class="content" ref="content" :style="contentStyle"
+         contenteditable @click="resizeImg($event, dashboard)" @drop="dropSave">
+    </div>
+    <div class="resize-wrapper" v-show="showResize" :style="{top:rtop + 'px',left:rleft + 'px'}">
+        <div class="size">
+            <span>width:</span>
+            <input type="text" v-model="rwidth">
+        </div>
+        <div class="size">
+            <span>height:</span>
+            <input type="text" v-model="rheight">
+        </div>
+        <div class="bth-group">
+            <el-button @click="confirmResize">确定</el-button>
+            <el-button @click="showResize=false">取消</el-button>
+        </div>
+    </div>
+</div>
