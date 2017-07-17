@@ -1,7 +1,7 @@
 /**
  * Vue-html5-editor 2.0.8
  * https://github.com/PeakTai/vue-html5-editor
- * build at Mon Jul 17 2017 11:22:00 GMT+0800 (中国标准时间)
+ * build at Mon Jul 17 2017 17:31:45 GMT+0800 (中国标准时间)
  */
 
 (function (global, factory) {
@@ -582,11 +582,16 @@ var dashboard$5 = {
                 return
             }
             if (!/^(http|https)?:\/\//.test(this.url)) {
-              // new Vue().$message.error('请输入以http://或者https://开头的链接')
-              alert('请输入以http://或者https://开头的链接');
+              this.$parent.$emit('errmessage', '请输入以http://或https://开头的链接');
               return
             }
             this.$parent.execCommand('createLink', this.url);
+            var stext = window.getSelection();
+            var aTag = stext.anchorNode.parentNode;
+            console.log(aTag);
+            this.$nextTick(function () {
+                aTag.setAttribute('target', '_blank');
+            });
             this.url = null;
         }
     }
@@ -746,7 +751,7 @@ var keyword = {
     dashboard: dashboard$9
 };
 
-var template$10 = "<div> <el-upload name=\"picture\" multiple ref=\"upload\" action=\"https://server.onloon.cc/bshop/config/pic/upload\" list-type=\"picture-card\" :on-preview=\"handlePictureCardPreview\" :on-remove=\"handleRemove\" :on-success=\"uploadSuccess\" :on-change=\"change\" :on-progress=\"progress\"> <i class=\"el-icon-plus\" id=\"add\"></i> </el-upload> <el-dialog v-model=\"dialogVisible\" size=\"tiny\"> <img width=\"100%\" :src=\"dialogImageUrl\" alt=\"\"> </el-dialog> <el-button type=\"primary\" @click=\"confirmUpload\" :disabled=\"btnState\">确定插入</el-button> <el-button @click=\"clear\">清空上传</el-button> </div>";
+var template$10 = "<div> <el-upload name=\"picture\" multiple ref=\"upload\" action=\"https://server.onloon.cc/bshop/config/pic/upload\" list-type=\"picture-card\" :on-preview=\"handlePictureCardPreview\" :on-remove=\"handleRemove\" :on-success=\"uploadSuccess\" :on-change=\"change\" :on-progress=\"progress\" :before-upload=\"beforeUpload\"> <i class=\"el-icon-plus\" id=\"add\"></i> </el-upload> <el-dialog v-model=\"dialogVisible\" size=\"tiny\"> <img width=\"100%\" :src=\"dialogImageUrl\" alt=\"\"> </el-dialog> <el-button type=\"primary\" @click=\"confirmUpload\" :disabled=\"btnState\">确定插入</el-button> <el-button @click=\"clear\">清空上传</el-button> </div>";
 
 var dashboard$10 = {
     template: template$10,
@@ -756,15 +761,15 @@ var dashboard$10 = {
           dialogVisible: false,
           isFirst: true,
           list: [],
-          btnState: false
+          btnState: true
         }
     },
     methods: {
-        change: function change () {
-          this.btnState = true;
+        change: function change (file, fileList) {
+          this.list = fileList;
         },
         handleRemove: function handleRemove (file, fileList) {
-          console.log(file, fileList);
+          this.list = fileList;
         },
         handlePictureCardPreview: function handlePictureCardPreview (file) {
           this.dialogImageUrl = file.url;
@@ -776,34 +781,43 @@ var dashboard$10 = {
         uploadSuccess: function uploadSuccess (res, file, fileList) {
           var this$1 = this;
 
-          var index = this.getIndex(file, fileList);
           this.$nextTick(function () {
             this$1.btnState = false;
           });
           if (!res.code) {
             this.btnState = false;
             file.url = res.data.urlWhole;
-            this.list[index] = {
-              src: res.data.urlWhole
-            };
+            this.list = fileList;
           }
         },
-        getIndex: function getIndex (item, arr) {
-          return arr.indexOf(item)
+        // getIndex (item, arr) {
+        //   return arr.indexOf(item)
+        // },
+        beforeUpload: function beforeUpload (file) {
+          if (!(file.type === 'image/jpeg' || file.type === 'image/jpg' || file.type === 'image/gif' || file.type === 'image/png')) {
+            this.$parent.$emit('errmessage', '上传文件只能是图片格式');
+            return false
+          }
+          if (!(file.size / 1024 / 1024 < 2)) {
+            this.$parent.$emit('errmessage', '上传图片大小不能超过 2MB!');
+            return false
+          }
         },
         confirmUpload: function confirmUpload () {
           var this$1 = this;
 
           var str = '';
           for (var i in this$1.list) {
-            str += "<img class=\"test\" src=\"" + (this$1.list[i].src) + "\" alt=\"\"/>";
+            str += "<img class=\"test\" src=\"" + (this$1.list[i].url) + "\" alt=\"\"/>";
           }
           this.$parent.execCommand(Command.INSERT_HTML, str);
+          this.$parent.$emit('sucmessage', '图片插入成功');
           this.list = [];
           this.$refs.upload.clearFiles();
+          this.btnState = true;
         },
         clear: function clear () {
-          this.btnState = false;
+          this.btnState = true;
           this.list = [];
           this.$refs.upload.clearFiles();
           return
@@ -1411,8 +1425,8 @@ var editor = {
             this.$emit('change', this.$refs.content.innerHTML);
         },
         dropSave: function dropSave(){
-            alert('123');
             this.$emit('change', this.$refs.content.innerHTML);
+            console.log('drop');
         },
         execCommand: function execCommand(command, arg){
             this.restoreSelection();

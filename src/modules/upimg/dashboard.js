@@ -9,15 +9,15 @@ export default {
           dialogVisible: false,
           isFirst: true,
           list: [],
-          btnState: false
+          btnState: true
         }
     },
     methods: {
-        change () {
-          this.btnState = true
+        change (file, fileList) {
+          this.list = fileList
         },
         handleRemove (file, fileList) {
-          console.log(file, fileList)
+          this.list = fileList
         },
         handlePictureCardPreview (file) {
           this.dialogImageUrl = file.url
@@ -27,32 +27,41 @@ export default {
           this.btnState = true
         },
         uploadSuccess (res, file, fileList) {
-          let index = this.getIndex(file, fileList)
           this.$nextTick(() => {
             this.btnState = false
           })
           if (!res.code) {
             this.btnState = false
             file.url = res.data.urlWhole
-            this.list[index] = {
-              src: res.data.urlWhole
-            }
+            this.list = fileList
           }
         },
-        getIndex (item, arr) {
-          return arr.indexOf(item)
+        // getIndex (item, arr) {
+        //   return arr.indexOf(item)
+        // },
+        beforeUpload (file) {
+          if (!(file.type === 'image/jpeg' || file.type === 'image/jpg' || file.type === 'image/gif' || file.type === 'image/png')) {
+            this.$parent.$emit('errmessage', '上传文件只能是图片格式')
+            return false
+          }
+          if (!(file.size / 1024 / 1024 < 2)) {
+            this.$parent.$emit('errmessage', '上传图片大小不能超过 2MB!')
+            return false
+          }
         },
         confirmUpload () {
           let str = ''
           for (let i in this.list) {
-            str += `<img class="test" src="${this.list[i].src}" alt=""/>`
+            str += `<img class="test" src="${this.list[i].url}" alt=""/>`
           }
           this.$parent.execCommand(Command.INSERT_HTML, str)
+          this.$parent.$emit('sucmessage', '图片插入成功')
           this.list = []
           this.$refs.upload.clearFiles()
+          this.btnState = true
         },
         clear () {
-          this.btnState = false
+          this.btnState = true
           this.list = []
           this.$refs.upload.clearFiles()
           return

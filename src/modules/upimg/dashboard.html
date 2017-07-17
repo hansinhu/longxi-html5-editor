@@ -9,7 +9,8 @@
   :on-remove="handleRemove"
   :on-success="uploadSuccess"
   :on-change="change"
-  :on-progress="progress">
+  :on-progress="progress"
+  :before-upload="beforeUpload">
     <i class="el-icon-plus" id="add"></i>
   </el-upload>
   <el-dialog v-model="dialogVisible" size="tiny">

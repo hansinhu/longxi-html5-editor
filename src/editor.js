@@ -128,6 +128,7 @@ export default {
         },
         dropSave(){
             this.$emit('change', this.$refs.content.innerHTML)
+            console.log('drop')
         },
         execCommand(command, arg){
             this.restoreSelection()

@@ -56,7 +56,9 @@
     :content="content" 
     :height="300" 
     :show-module-name="showModuleName"
-    @change="updateData" 
+    @change="updateData"
+    @errmessage="test"
+    @sucmessage="succ"
     ref="editor">
     </vue-html5-editor>
 </div>
@@ -104,6 +106,12 @@
                 if(newContent){
                     this.content = newContent
                 }
+            },
+            test: function (val) {
+                new Vue().$message.error(val)
+            },
+            succ: function (val) {
+                new Vue().$message.success(val)
             }
         }
     })
