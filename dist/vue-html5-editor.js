@@ -1,7 +1,7 @@
 /**
  * Vue-html5-editor 2.0.8
  * https://github.com/PeakTai/vue-html5-editor
- * build at Mon Jul 17 2017 17:31:45 GMT+0800 (中国标准时间)
+ * build at Mon Jul 17 2017 17:37:21 GMT+0800 (中国标准时间)
  */
 
 (function (global, factory) {
@@ -588,7 +588,6 @@ var dashboard$5 = {
             this.$parent.execCommand('createLink', this.url);
             var stext = window.getSelection();
             var aTag = stext.anchorNode.parentNode;
-            console.log(aTag);
             this.$nextTick(function () {
                 aTag.setAttribute('target', '_blank');
             });
