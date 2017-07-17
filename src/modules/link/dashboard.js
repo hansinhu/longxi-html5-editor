@@ -19,7 +19,7 @@ export default {
             let aTag = stext.anchorNode.parentNode
             this.$nextTick(() => {
                 aTag.setAttribute('target', '_blank')
-                this.$parent.$emit('change', this.$refs.content.innerHTML)
+                this.$parent.$emit('change', this.$parent.$refs.content.innerHTML)
             })
             this.url = null
         }
