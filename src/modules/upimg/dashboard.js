@@ -54,7 +54,7 @@ export default {
           for (let i in this.list) {
             str += `<img class="test" src="${this.list[i].url}" alt=""/>`
           }
-          if (this.list.length > 9) {
+          if (this.list.length > 10) {
             this.$parent.$emit('errmessage', '单次上传最多十张图片')
             return
           } else {
