@@ -1,7 +1,7 @@
 /**
- * Vue-html5-editor 2.0.13
+ * Vue-html5-editor 2.0.14
  * https://github.com/PeakTai/vue-html5-editor
- * build at Wed Jul 19 2017 09:28:55 GMT+0800 (中国标准时间)
+ * build at Wed Jul 19 2017 09:36:43 GMT+0800 (中国标准时间)
  */
 
 (function (global, factory) {
@@ -544,7 +544,7 @@ var dashboard$4 = {
     template: template$4,
     data: function data(){
         return {
-            version: "2.0.13"
+            version: "2.0.14"
         }
     }
 };
@@ -753,7 +753,7 @@ var keyword = {
     dashboard: dashboard$9
 };
 
-var template$10 = "<div> <el-upload name=\"picture\" multiple ref=\"upload\" action=\"https://server.onloon.cc/bshop/config/pic/upload\" list-type=\"picture-card\" :on-preview=\"handlePictureCardPreview\" :on-remove=\"handleRemove\" :on-success=\"uploadSuccess\" :on-change=\"change\" :on-progress=\"progress\" :before-upload=\"beforeUpload\"> <i class=\"el-icon-plus\" id=\"add\"></i> </el-upload> <p style=\"color: #7d99b7;font-size: 13px;margin-top: -6px\">支持格式：\"jpg\",\"jpeg\",\"png\",\"gif\",单张最大为2M，单次最多上传十张</p> <el-dialog v-model=\"dialogVisible\" size=\"tiny\"> <img width=\"100%\" :src=\"dialogImageUrl\" alt=\"\"> </el-dialog> <el-button type=\"primary\" @click=\"confirmUpload\" :disabled=\"btnState\">确定插入</el-button> <el-button @click=\"clear\">清空上传</el-button> </div>";
+var template$10 = "<div> <el-upload name=\"picture\" multiple ref=\"upload\" action=\"https://server.onloon.cc/bshop/config/pic/upload\" list-type=\"picture-card\" :on-preview=\"handlePictureCardPreview\" :on-remove=\"handleRemove\" :on-success=\"uploadSuccess\" :on-change=\"change\" :on-progress=\"progress\" :before-upload=\"beforeUpload\"> <i class=\"el-icon-plus\" id=\"add\"></i> </el-upload> <p class=\"tip\" style=\"color: #7d99b7;font-size: 13px;margin-bottom: 6px\">支持格式：\"jpg\",\"jpeg\",\"png\",\"gif\",单张最大为2M，单次最多上传十张</p> <el-dialog v-model=\"dialogVisible\" size=\"tiny\"> <img width=\"100%\" :src=\"dialogImageUrl\" alt=\"\"> </el-dialog> <el-button type=\"primary\" @click=\"confirmUpload\" :disabled=\"btnState\">确定插入</el-button> <el-button @click=\"clear\">清空上传</el-button> </div>";
 
 var dashboard$10 = {
     template: template$10,
