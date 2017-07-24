@@ -9,19 +9,15 @@ export default {
         return {
             nameList: [
                 'Microsoft YaHei',
-                'Helvetica Neue',
-                'Helvetica',
-                'Arial',
-                'sans-serif',
-                'Verdana',
-                'Georgia',
-                'Times New Roman',
-                'Trebuchet MS',
+                '宋体, SimSun',
+                '楷体, SimKai',
+                '隶书, SimLi',
+                '黑体, SimHei',
                 'Microsoft JhengHei',
-                'Courier New',
-                'Impact',
-                'Comic Sans MS',
-                'Consolas'
+                'PingFang SC Regular',
+                'Impact, chicago',
+                'Times New Roman',
+                'comic sans ms'
             ],
             lineHeightList: [
                 '1.0', '1.2', '1.5', '1.8', '2.0', '2.5', '3.0'

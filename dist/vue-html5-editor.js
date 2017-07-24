@@ -1,7 +1,7 @@
 /**
- * Vue-html5-editor 2.0.15
+ * Vue-html5-editor 2.0.16
  * https://github.com/PeakTai/vue-html5-editor
- * build at Thu Jul 20 2017 09:50:52 GMT+0800 (中国标准时间)
+ * build at Mon Jul 24 2017 10:04:02 GMT+0800 (中国标准时间)
  */
 
 (function (global, factory) {
@@ -198,19 +198,15 @@ var dashboard$2 = {
         return {
             nameList: [
                 'Microsoft YaHei',
-                'Helvetica Neue',
-                'Helvetica',
-                'Arial',
-                'sans-serif',
-                'Verdana',
-                'Georgia',
-                'Times New Roman',
-                'Trebuchet MS',
+                '宋体, SimSun',
+                '楷体, SimKai',
+                '隶书, SimLi',
+                '黑体, SimHei',
                 'Microsoft JhengHei',
-                'Courier New',
-                'Impact',
-                'Comic Sans MS',
-                'Consolas'
+                'PingFang SC Regular',
+                'Impact, chicago',
+                'Times New Roman',
+                'comic sans ms'
             ],
             lineHeightList: [
                 '1.0', '1.2', '1.5', '1.8', '2.0', '2.5', '3.0'
@@ -544,7 +540,7 @@ var dashboard$4 = {
     template: template$4,
     data: function data(){
         return {
-            version: "2.0.15"
+            version: "2.0.16"
         }
     }
 };
