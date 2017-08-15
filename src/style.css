@@ -4,14 +4,6 @@
   --color: #333;
 }
 
-/**
-.vue-html5-editor
-    ├──.toolbar
-    |    ├── ul  (menu)
-    |    └── .dashboard.html
-    └──.content
-*/
-
 .vue-html5-editor {
   position: relative;
   font-size: 14px;

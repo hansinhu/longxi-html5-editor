@@ -1,7 +1,7 @@
 /**
  * Vue-html5-editor 2.0.19
  * https://github.com/PeakTai/vue-html5-editor
- * build at Tue Aug 15 2017 16:58:34 GMT+0800 (中国标准时间)
+ * build at Tue Aug 15 2017 18:00:25 GMT+0800 (中国标准时间)
  */
 
 (function (global, factory) {
