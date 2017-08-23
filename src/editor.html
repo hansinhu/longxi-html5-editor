@@ -16,8 +16,14 @@
             </keep-alive>
         </div>
     </div>
-    <div class="content" ref="content" :style="contentStyle"
-         contenteditable @click="resizeImg($event, dashboard)" @drop="dropSave">
+    <div 
+    class="content" 
+    ref="content" 
+    :style="contentStyle"
+    contenteditable 
+    @click="resizeImg($event, dashboard)" 
+    @drop="dropSave"
+    >
     </div>
     <div class="resize-wrapper" v-show="showResize" :style="{top:rtop + 'px',left:rleft + 'px'}">
         <div class="size">

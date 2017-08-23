@@ -47,7 +47,7 @@
         <button type="button" @click="focus">focus</button>
         <button type="button" @click="fullScreen">full screen</button>
         <button type="button" @click="showModuleName=!showModuleName">toggle module name</button>
-        <button type="button" @click="reset">change content</button>
+        <button type="button" @click="reset">change imgList</button>
         <span style="white-space: nowrap">content length : {{content.length}}</span>
     </p>
 
@@ -56,9 +56,11 @@
     :content="content" 
     :height="300" 
     :show-module-name="showModuleName"
+    :img-list="list"
     @change="updateData"
     @errmessage="test"
     @sucmessage="succ"
+    @showmaterial="material"
     ref="editor">
     </vue-html5-editor>
 </div>
@@ -80,15 +82,18 @@
             "hr",
             "eraser",
             "undo",
-            "keyword"
+            "material"
         ]
     })
 
     new Vue({
         el: "#app",
-        data: {
-            content: "",
-            showModuleName: true
+        data() {
+            return {
+                content: "dsa654ds546aas654",
+                showModuleName: true,
+                list: []
+            }
         },
         methods: {
             updateData: function (data) {
@@ -102,16 +107,25 @@
                 this.$refs.editor.focus()
             },
             reset:function () {
-                var newContent = prompt('please input some html code: ')
-                if(newContent){
-                    this.content = newContent
-                }
+                this.list = [
+                    {
+                        url: 'https://img.onloon.co/20170822154926115462031.jpg'
+                    },
+                    {
+                        url: 'https://img.onloon.co/20170822154923460933580.jpg'
+                    }
+                ]
+                console.log(this.list)
             },
             test: function (val) {
                 new Vue().$message.error(val)
             },
             succ: function (val) {
+                console.log(val)
                 new Vue().$message.success(val)
+            },
+            material: function (val) {
+                console.log('13213')
             }
         }
     })

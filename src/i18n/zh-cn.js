@@ -44,5 +44,6 @@ export default {
     'line height': '行高',
     'exceed size limit': '超出大小限制',
     keyword: '特征词',
-    upimg: '图片'
+    upimg: '图片',
+    material: '图片'
 }

@@ -44,5 +44,6 @@ export default {
     'line height': 'line height',
     'exceed size limit': 'exceed size limit',
     keyword: 'keyword',
-    upimg: 'upload Pic'
+    upimg: 'upload Pic',
+    material: 'open material'
 }

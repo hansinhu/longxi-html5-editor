@@ -1,7 +1,7 @@
 /**
- * Vue-html5-editor 2.0.19
+ * Vue-html5-editor 2.0.20
  * https://github.com/PeakTai/vue-html5-editor
- * build at Tue Aug 15 2017 18:00:25 GMT+0800 (中国标准时间)
+ * build at Wed Aug 23 2017 14:21:26 GMT+0800 (中国标准时间)
  */
 
 (function (global, factory) {
@@ -540,7 +540,7 @@ var dashboard$4 = {
     template: template$4,
     data: function data(){
         return {
-            version: "2.0.19"
+            version: "2.0.20"
         }
     }
 };
@@ -840,6 +840,19 @@ var upimg = {
 };
 
 /**
+ * create material
+ */
+
+var material = {
+    name: 'material',
+    icon: 'fa fa-file-image-o',
+    i18n: 'material',
+    handler: function handler(editor) {
+      editor.$emit('showmaterial', true);
+    }
+};
+
+/**
  * build-in moduls
  * Created by peak on 2016/11/1.
  */
@@ -859,7 +872,8 @@ var buildInModules = [
     fullScreen$1,
     info,
     keyword,
-    upimg
+    upimg,
+    material
 ];
 
 /**
@@ -1328,13 +1342,13 @@ var editor = {
             type: Boolean,
             default: true
         },
+        imgList: {
+            type: Array
+        },
         showModuleName: {}
     },
     data: function data(){
         return {
-            // defaultShowModuleName:false
-            // locale: {},
-            // modules:{},
             fullScreen: false,
             dashboard: null,
             rwidth: 0,
@@ -1366,6 +1380,26 @@ var editor = {
                 return
             }
             component.parentEl.appendChild(component.$el);
+        },
+        imgList: function imgList(val){
+            var this$1 = this;
+
+            if (val.length!==0) {
+                var str = '';
+                for (var i in val) {
+                  str += "<img class=\"test\" src=\"" + (val[i].url) + "\" alt=\"\"/>";
+                }
+                if (val.length > 10) {
+                  this.$emit('errmessage', '单次上传最多十张图片');
+                  return
+                } else {
+                  this.execCommand('insertHTML', str);
+                  this.$emit('change', this.$refs.content.innerHTML);
+                  this.$nextTick(function () {
+                    this$1.$emit('sucmessage', '图片插入成功');
+                  });
+                }
+            }
         }
     },
     computed: {
@@ -1585,7 +1619,8 @@ var i18nZhCn = {
     'line height': '行高',
     'exceed size limit': '超出大小限制',
     keyword: '特征词',
-    upimg: '图片'
+    upimg: '图片',
+    material: '图片'
 };
 
 var i18nEnUs = {
@@ -1634,7 +1669,8 @@ var i18nEnUs = {
     'line height': 'line height',
     'exceed size limit': 'exceed size limit',
     keyword: 'keyword',
-    upimg: 'upload Pic'
+    upimg: 'upload Pic',
+    material: 'open material'
 };
 
 /**

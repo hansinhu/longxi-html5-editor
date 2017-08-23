@@ -27,13 +27,13 @@ export default {
             type: Boolean,
             default: true
         },
+        imgList: {
+            type: Array
+        },
         showModuleName: {}
     },
     data(){
         return {
-            // defaultShowModuleName:false
-            // locale: {},
-            // modules:{},
             fullScreen: false,
             dashboard: null,
             rwidth: 0,
@@ -65,6 +65,24 @@ export default {
                 return
             }
             component.parentEl.appendChild(component.$el)
+        },
+        imgList(val){
+            if (val.length!==0) {
+                let str = ''
+                for (let i in val) {
+                  str += `<img class="test" src="${val[i].url}" alt=""/>`
+                }
+                if (val.length > 10) {
+                  this.$emit('errmessage', '单次上传最多十张图片')
+                  return
+                } else {
+                  this.execCommand('insertHTML', str)
+                  this.$emit('change', this.$refs.content.innerHTML)
+                  this.$nextTick(() => {
+                    this.$emit('sucmessage', '图片插入成功')
+                  })
+                }
+            }
         }
     },
     computed: {
