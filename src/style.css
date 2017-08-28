@@ -33,7 +33,19 @@
       }
       & > input {
         display: inline-block;
+        appearance: button;
+        border-radius: 3px;
+        background-color: #fff;
+        border: 1px solid #c4c4c4;
         width: 77%;
+        height: 20px;
+        line-height: 20px;
+      }
+    }
+    & > .bth-group{
+      margin-top: 8px;
+      & > .el-button{
+        padding: 7px 45px;
       }
     }
   }

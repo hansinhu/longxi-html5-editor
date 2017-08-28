@@ -1,7 +1,7 @@
 /**
- * Vue-html5-editor 2.0.20
+ * Vue-html5-editor 2.0.21
  * https://github.com/PeakTai/vue-html5-editor
- * build at Wed Aug 23 2017 14:21:26 GMT+0800 (中国标准时间)
+ * build at Mon Aug 28 2017 19:20:27 GMT+0800 (中国标准时间)
  */
 
 (function (global, factory) {
@@ -540,7 +540,7 @@ var dashboard$4 = {
     template: template$4,
     data: function data(){
         return {
-            version: "2.0.20"
+            version: "2.0.21"
         }
     }
 };
@@ -1312,9 +1312,9 @@ RangeHandler.prototype.execCommand = function execCommand (command, arg) {
     }
 };
 
-__$styleInject(".vue-html5-editor,.vue-html5-editor *{box-sizing:border-box}.vue-html5-editor{position:relative;font-size:14px;line-height:1.5;background-color:#fff;color:#333;border:1px solid #ddd;text-align:left;border-radius:5px;overflow:hidden}.vue-html5-editor>.resize-wrapper{position:absolute;width:288px;border-radius:4px;box-shadow:0 0 8px rgba(0,0,0,.08);border:1px solid #ccc;padding:12px;background-color:#fff}.vue-html5-editor>.resize-wrapper>.size{margin-bottom:5px;font-size:0}.vue-html5-editor>.resize-wrapper>.size>span{font-size:13px;display:inline-block;width:23%}.vue-html5-editor>.resize-wrapper>.size>input{display:inline-block;width:77%}.vue-html5-editor.full-screen{position:fixed!important;top:0!important;left:0!important;bottom:0!important;right:0!important;border-radius:0}.vue-html5-editor>.toolbar{position:relative;background-color:inherit}.vue-html5-editor>.toolbar>ul{list-style:none;padding:0;margin:0;border-bottom:1px solid #ddd}.vue-html5-editor>.toolbar>ul>li{display:inline-block;cursor:pointer;text-align:center;line-height:36px;padding:0 10px}.vue-html5-editor>.toolbar>ul>li .icon{height:16px;width:16px;display:inline;vertical-align:middle}.vue-html5-editor>.toolbar>.dashboard{background-color:inherit;border-bottom:1px solid #ddd;padding:10px;position:absolute;top:100%;left:0;right:0;overflow:auto}.vue-html5-editor>.toolbar>.dashboard input[type=text],.vue-html5-editor>.toolbar>.dashboard input[type=number],.vue-html5-editor>.toolbar>.dashboard select{padding:6px 12px;color:inherit;background-color:transparent;border:1px solid #ddd;border-radius:5px}.vue-html5-editor>.toolbar>.dashboard input[type=text]:hover,.vue-html5-editor>.toolbar>.dashboard input[type=number]:hover,.vue-html5-editor>.toolbar>.dashboard select:hover{border-color:#bebebe}.vue-html5-editor>.toolbar>.dashboard input[type=text][disabled],.vue-html5-editor>.toolbar>.dashboard input[type=text][readonly],.vue-html5-editor>.toolbar>.dashboard input[type=number][disabled],.vue-html5-editor>.toolbar>.dashboard input[type=number][readonly],.vue-html5-editor>.toolbar>.dashboard select[disabled],.vue-html5-editor>.toolbar>.dashboard select[readonly]{background-color:#eee;opacity:1}.vue-html5-editor>.toolbar>.dashboard input[type=text][disabled],.vue-html5-editor>.toolbar>.dashboard input[type=number][disabled],.vue-html5-editor>.toolbar>.dashboard select[disabled]{cursor:not-allowed}.vue-html5-editor>.toolbar>.dashboard button{color:inherit;background-color:inherit;padding:6px 12px;white-space:nowrap;vertical-align:middle;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;border:1px solid #ddd;border-radius:5px;margin-right:4px;margin-bottom:4px}.vue-html5-editor>.toolbar>.dashboard button:hover{border-color:#bebebe}.vue-html5-editor>.toolbar>.dashboard button[disabled]{cursor:not-allowed;opacity:.68}.vue-html5-editor>.toolbar>.dashboard button:last-child{margin-right:0}.vue-html5-editor>.toolbar>.dashboard label{font-weight:bolder}.vue-html5-editor>.content{overflow:auto;padding:10px}.vue-html5-editor>.content>ol,.vue-html5-editor>.content>ul{padding-left:20px}.vue-html5-editor>.content>h1{font-size:2em!important}.vue-html5-editor>.content>h2{font-size:1.5em!important}.vue-html5-editor>.content>h3{font-size:1.17em!important}.vue-html5-editor>.content>h4{font-size:1em!important}.vue-html5-editor>.content>h5{font-size:.83em!important}.vue-html5-editor>.content>h6{font-size:.67em!important}.vue-html5-editor>.content>i{font-style:italic!important}.vue-html5-editor>.content>ol>li{list-style:decimal}.vue-html5-editor>.content>ul>li{list-style:disc}.vue-html5-editor>.content:focus{outline:0}",undefined);
+__$styleInject(".vue-html5-editor,.vue-html5-editor *{box-sizing:border-box}.vue-html5-editor{position:relative;font-size:14px;line-height:1.5;background-color:#fff;color:#333;border:1px solid #ddd;text-align:left;border-radius:5px;overflow:hidden}.vue-html5-editor>.resize-wrapper{position:absolute;width:288px;border-radius:4px;box-shadow:0 0 8px rgba(0,0,0,.08);border:1px solid #ccc;padding:12px;background-color:#fff}.vue-html5-editor>.resize-wrapper>.size{margin-bottom:5px;font-size:0}.vue-html5-editor>.resize-wrapper>.size>span{font-size:13px;display:inline-block;width:23%}.vue-html5-editor>.resize-wrapper>.size>input{display:inline-block;-webkit-appearance:button;-moz-appearance:button;appearance:button;border-radius:3px;background-color:#fff;border:1px solid #c4c4c4;width:77%;height:20px;line-height:20px}.vue-html5-editor>.resize-wrapper>.bth-group{margin-top:8px}.vue-html5-editor>.resize-wrapper>.bth-group>.el-button{padding:7px 45px}.vue-html5-editor.full-screen{position:fixed!important;top:0!important;left:0!important;bottom:0!important;right:0!important;border-radius:0}.vue-html5-editor>.toolbar{position:relative;background-color:inherit}.vue-html5-editor>.toolbar>ul{list-style:none;padding:0;margin:0;border-bottom:1px solid #ddd}.vue-html5-editor>.toolbar>ul>li{display:inline-block;cursor:pointer;text-align:center;line-height:36px;padding:0 10px}.vue-html5-editor>.toolbar>ul>li .icon{height:16px;width:16px;display:inline;vertical-align:middle}.vue-html5-editor>.toolbar>.dashboard{background-color:inherit;border-bottom:1px solid #ddd;padding:10px;position:absolute;top:100%;left:0;right:0;overflow:auto}.vue-html5-editor>.toolbar>.dashboard input[type=text],.vue-html5-editor>.toolbar>.dashboard input[type=number],.vue-html5-editor>.toolbar>.dashboard select{padding:6px 12px;color:inherit;background-color:transparent;border:1px solid #ddd;border-radius:5px}.vue-html5-editor>.toolbar>.dashboard input[type=text]:hover,.vue-html5-editor>.toolbar>.dashboard input[type=number]:hover,.vue-html5-editor>.toolbar>.dashboard select:hover{border-color:#bebebe}.vue-html5-editor>.toolbar>.dashboard input[type=text][disabled],.vue-html5-editor>.toolbar>.dashboard input[type=text][readonly],.vue-html5-editor>.toolbar>.dashboard input[type=number][disabled],.vue-html5-editor>.toolbar>.dashboard input[type=number][readonly],.vue-html5-editor>.toolbar>.dashboard select[disabled],.vue-html5-editor>.toolbar>.dashboard select[readonly]{background-color:#eee;opacity:1}.vue-html5-editor>.toolbar>.dashboard input[type=text][disabled],.vue-html5-editor>.toolbar>.dashboard input[type=number][disabled],.vue-html5-editor>.toolbar>.dashboard select[disabled]{cursor:not-allowed}.vue-html5-editor>.toolbar>.dashboard button{color:inherit;background-color:inherit;padding:6px 12px;white-space:nowrap;vertical-align:middle;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;border:1px solid #ddd;border-radius:5px;margin-right:4px;margin-bottom:4px}.vue-html5-editor>.toolbar>.dashboard button:hover{border-color:#bebebe}.vue-html5-editor>.toolbar>.dashboard button[disabled]{cursor:not-allowed;opacity:.68}.vue-html5-editor>.toolbar>.dashboard button:last-child{margin-right:0}.vue-html5-editor>.toolbar>.dashboard label{font-weight:bolder}.vue-html5-editor>.content{overflow:auto;padding:10px}.vue-html5-editor>.content>ol,.vue-html5-editor>.content>ul{padding-left:20px}.vue-html5-editor>.content>h1{font-size:2em!important}.vue-html5-editor>.content>h2{font-size:1.5em!important}.vue-html5-editor>.content>h3{font-size:1.17em!important}.vue-html5-editor>.content>h4{font-size:1em!important}.vue-html5-editor>.content>h5{font-size:.83em!important}.vue-html5-editor>.content>h6{font-size:.67em!important}.vue-html5-editor>.content>i{font-style:italic!important}.vue-html5-editor>.content>ol>li{list-style:decimal}.vue-html5-editor>.content>ul>li{list-style:disc}.vue-html5-editor>.content:focus{outline:0}",undefined);
 
-var template$11 = "<div class=\"vue-html5-editor\" :class=\"{'full-screen':fullScreen}\"> <div class=\"toolbar\" ref=\"toolbar\"> <ul> <template v-for=\"module in modules\"> <li :title=\"locale[module.i18n]\" @click=\"activeModule(module)\"> <span class=\"icon\" :class=\"module.icon\"></span> <template v-if=\"showModuleName === undefined ? defaultShowModuleName : showModuleName\"> &nbsp;{{locale[module.i18n]}} </template> </li> </template> </ul> <div class=\"dashboard\" v-show=\"dashboard\" ref=\"dashboard\"> <keep-alive> <div v-show=\"dashboard\" :is=\"dashboard\"></div> </keep-alive> </div> </div> <div class=\"content\" ref=\"content\" :style=\"contentStyle\" contenteditable @click=\"resizeImg($event, dashboard)\" @drop=\"dropSave\"> </div> <div class=\"resize-wrapper\" v-show=\"showResize\" :style=\"{top:rtop + 'px',left:rleft + 'px'}\"> <div class=\"size\"> <span>width:</span> <input type=\"text\" v-model=\"rwidth\"> </div> <div class=\"size\"> <span>height:</span> <input type=\"text\" v-model=\"rheight\"> </div> <div class=\"bth-group\"> <el-button @click=\"confirmResize\">确定</el-button> <el-button @click=\"showResize=false\">取消</el-button> </div> </div> </div>";
+var template$11 = "<div class=\"vue-html5-editor\" :class=\"{'full-screen':fullScreen}\"> <div class=\"toolbar\" ref=\"toolbar\"> <ul> <template v-for=\"module in modules\"> <li :title=\"locale[module.i18n]\" @click=\"activeModule(module)\"> <span class=\"icon\" :class=\"module.icon\"></span> <template v-if=\"showModuleName === undefined ? defaultShowModuleName : showModuleName\"> &nbsp;{{locale[module.i18n]}} </template> </li> </template> </ul> <div class=\"dashboard\" v-show=\"dashboard\" ref=\"dashboard\"> <keep-alive> <div v-show=\"dashboard\" :is=\"dashboard\"></div> </keep-alive> </div> </div> <div class=\"content\" ref=\"content\" :style=\"contentStyle\" contenteditable @click=\"resizeImg($event, dashboard)\" @drop=\"dropSave\"> </div> <div class=\"resize-wrapper\" v-show=\"showResize\" :style=\"{top:rtop + 'px',left:rleft + 'px'}\"> <div class=\"size\"> <span>width:</span> <input type=\"text\" v-model=\"fwidth\" @focus=\"flag=1\"> </div> <div class=\"size\"> <span>height:</span> <input type=\"text\" v-model=\"fheight\" @focus=\"flag=2\"> </div> <el-checkbox v-model=\"saveScale\">保持图片原有比例</el-checkbox> <div class=\"bth-group\"> <el-button type=\"primary\" @click=\"confirmResize\">确定</el-button> <el-button @click=\"showResize=false\">取消</el-button> </div> </div> </div>";
 
 /**
  * Created by peak on 2017/2/9.
@@ -1353,11 +1353,16 @@ var editor = {
             dashboard: null,
             rwidth: 0,
             rheight: 0,
+            fwidth: 0,
+            fheight: 0,
             showResize: false,
             target: null,
             rtop: 0,
             rleft: 0,
-            scale: 1
+            scale: 1,
+            // 图片比例
+            saveScale: true,
+            flag: 1
         }
     },
     watch: {
@@ -1400,6 +1405,18 @@ var editor = {
                   });
                 }
             }
+        },
+        fwidth: function fwidth(val){
+            if (this.flag === 2 || !this.saveScale) {
+                return
+            }
+            this.fheight = val / this.scale;
+        },
+        fheight: function fheight(val){
+            if (this.flag === 1 || !this.saveScale) {
+                return
+            }
+            this.fwidth = val * this.scale;
         }
     },
     computed: {
@@ -1449,6 +1466,8 @@ var editor = {
                 this.showResize = true;
                 this.rwidth = event.target.offsetWidth;
                 this.rheight = event.target.offsetHeight;
+                this.fwidth = event.target.offsetWidth;
+                this.fheight = event.target.offsetHeight;
                 this.scale = this.rwidth / this.rheight;
             } else {
               this.showResize = false;
@@ -1456,8 +1475,8 @@ var editor = {
             }
         },
         confirmResize: function confirmResize(){
-            this.target.style.width = (this.rwidth) + "px";
-            this.target.style.height = (this.rheight) + "px";
+            this.target.style.width = (this.fwidth) + "px";
+            this.target.style.height = (this.fheight) + "px";
             this.showResize = false;
             this.$emit('change', this.$refs.content.innerHTML);
         },

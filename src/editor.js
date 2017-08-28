@@ -38,11 +38,16 @@ export default {
             dashboard: null,
             rwidth: 0,
             rheight: 0,
+            fwidth: 0,
+            fheight: 0,
             showResize: false,
             target: null,
             rtop: 0,
             rleft: 0,
-            scale: 1
+            scale: 1,
+            // 图片比例
+            saveScale: true,
+            flag: 1
         }
     },
     watch: {
@@ -83,6 +88,18 @@ export default {
                   })
                 }
             }
+        },
+        fwidth(val){
+            if (this.flag === 2 || !this.saveScale) {
+                return
+            }
+            this.fheight = val / this.scale
+        },
+        fheight(val){
+            if (this.flag === 1 || !this.saveScale) {
+                return
+            }
+            this.fwidth = val * this.scale
         }
     },
     computed: {
@@ -132,6 +149,8 @@ export default {
                 this.showResize = true
                 this.rwidth = event.target.offsetWidth
                 this.rheight = event.target.offsetHeight
+                this.fwidth = event.target.offsetWidth
+                this.fheight = event.target.offsetHeight
                 this.scale = this.rwidth / this.rheight
             } else {
               this.showResize = false
@@ -139,8 +158,8 @@ export default {
             }
         },
         confirmResize(){
-            this.target.style.width = `${this.rwidth}px`
-            this.target.style.height = `${this.rheight}px`
+            this.target.style.width = `${this.fwidth}px`
+            this.target.style.height = `${this.fheight}px`
             this.showResize = false
             this.$emit('change', this.$refs.content.innerHTML)
         },
