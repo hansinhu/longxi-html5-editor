@@ -214,13 +214,11 @@ export default {
             }
         },
         activeModule(module){
-            alert(module.has)
             if (typeof module.handler === 'function') {
                 module.handler(this)
                 return
-            }
-            if (typeof module.handler !== 'function') {
-                this.toggleDashboard(`dashboard-${module.name}`)
+            } else {
+                this.toggleDashboard(module.name)
                 return
             }
         }
