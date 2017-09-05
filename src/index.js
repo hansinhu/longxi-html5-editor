@@ -58,11 +58,10 @@ class VueHtml5Editor {
             // specify the config for each module in options by name
             const config = options[module.name]
             module.config = mixin(module.config, config)
-
+            components[`dashboard-${module.name}`] = module.dashboard
             if (module.dashboard) {
                 // $options.module
                 module.dashboard.module = module
-                components[module.name] = module.dashboard
             }
             if (options.icons && options.icons[module.name]) {
                 module.icon = options.icons[module.name]
