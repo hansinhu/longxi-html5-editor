@@ -172,7 +172,7 @@ export default {
             if (this.range) {
                 new RangeHandler(this.range).execCommand(command, arg)
             }
-            this.toggleDashboard()
+            this.toggleDashboard(null)
             this.$emit('change', this.$refs.content.innerHTML)
         },
         getCurrentRange(){
@@ -219,6 +219,7 @@ export default {
                 return
             }
             if (module.hasDashboard) {
+                alert(module.name)
                 this.toggleDashboard(`dashboard-${module.name}`)
                 return
             }
