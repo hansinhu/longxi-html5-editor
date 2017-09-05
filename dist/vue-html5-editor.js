@@ -1,7 +1,7 @@
 /**
- * Vue-html5-editor 2.0.29
+ * Vue-html5-editor 2.0.30
  * https://github.com/PeakTai/vue-html5-editor
- * build at Tue Sep 05 2017 15:39:45 GMT+0800 (中国标准时间)
+ * build at Tue Sep 05 2017 15:43:47 GMT+0800 (中国标准时间)
  */
 
 (function (global, factory) {
@@ -540,7 +540,7 @@ var dashboard$4 = {
     template: template$4,
     data: function data(){
         return {
-            version: "2.0.29"
+            version: "2.0.30"
         }
     }
 };
@@ -1772,13 +1772,15 @@ var VueHtml5Editor = function VueHtml5Editor(options) {
 
 
     modules.forEach(function (module) {
+        console.log('我来了！');
         // specify the config for each module in options by name
         var config = options[module.name];
         module.config = mixin(module.config, config);
-        components[("dashboard-" + (module.name))] = module.dashboard;
+
         if (module.dashboard) {
             // $options.module
             module.dashboard.module = module;
+            components[("dashboard-" + (module.name))] = module.dashboard;
         }
         if (options.icons && options.icons[module.name]) {
             module.icon = options.icons[module.name];
