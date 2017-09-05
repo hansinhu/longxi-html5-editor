@@ -220,6 +220,7 @@ export default {
             }
             if (module.hasDashboard) {
                 this.toggleDashboard(`dashboard-${module.name}`)
+                return
             }
         }
     },

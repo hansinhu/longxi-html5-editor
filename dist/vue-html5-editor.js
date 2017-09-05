@@ -1,7 +1,7 @@
 /**
- * Vue-html5-editor 2.0.22
+ * Vue-html5-editor 2.0.23
  * https://github.com/PeakTai/vue-html5-editor
- * build at Tue Sep 05 2017 13:56:17 GMT+0800 (中国标准时间)
+ * build at Tue Sep 05 2017 14:41:02 GMT+0800 (中国标准时间)
  */
 
 (function (global, factory) {
@@ -540,7 +540,7 @@ var dashboard$4 = {
     template: template$4,
     data: function data(){
         return {
-            version: "2.0.22"
+            version: "2.0.23"
         }
     }
 };
@@ -1539,6 +1539,7 @@ var editor = {
             }
             if (module.hasDashboard) {
                 this.toggleDashboard(("dashboard-" + (module.name)));
+                return
             }
         }
     },
