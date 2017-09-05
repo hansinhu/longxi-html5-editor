@@ -1,7 +1,7 @@
 /**
- * Vue-html5-editor 2.0.30
+ * Vue-html5-editor 2.0.31
  * https://github.com/PeakTai/vue-html5-editor
- * build at Tue Sep 05 2017 15:43:47 GMT+0800 (中国标准时间)
+ * build at Tue Sep 05 2017 15:47:37 GMT+0800 (中国标准时间)
  */
 
 (function (global, factory) {
@@ -540,7 +540,7 @@ var dashboard$4 = {
     template: template$4,
     data: function data(){
         return {
-            version: "2.0.30"
+            version: "2.0.31"
         }
     }
 };
@@ -1533,7 +1533,6 @@ var editor = {
             }
         },
         activeModule: function activeModule(module){
-            console.log(module);
             if (typeof module.handler === 'function') {
                 module.handler(this);
                 return
@@ -1772,7 +1771,6 @@ var VueHtml5Editor = function VueHtml5Editor(options) {
 
 
     modules.forEach(function (module) {
-        console.log('我来了！');
         // specify the config for each module in options by name
         var config = options[module.name];
         module.config = mixin(module.config, config);
@@ -1787,8 +1785,6 @@ var VueHtml5Editor = function VueHtml5Editor(options) {
         }
 
         module.hasDashboard = !!module.dashboard;
-        // prevent vue sync
-        module.dashboard = null;
     });
 
     // i18n

@@ -55,7 +55,6 @@ class VueHtml5Editor {
 
 
         modules.forEach((module) => {
-            console.log('我来了！')
             // specify the config for each module in options by name
             const config = options[module.name]
             module.config = mixin(module.config, config)
@@ -70,8 +69,6 @@ class VueHtml5Editor {
             }
 
             module.hasDashboard = !!module.dashboard
-            // prevent vue sync
-            module.dashboard = null
         })
 
         // i18n
