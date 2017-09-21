@@ -52,7 +52,7 @@ export default {
         confirmUpload () {
           let str = ''
           for (let i in this.list) {
-            str += `<img class="test" src="${this.list[i].url}" alt=""/>`
+            str += `<img src="${this.list[i].url}" alt=""/>`
           }
           if (this.list.length > 10) {
             this.$parent.$emit('errmessage', '单次上传最多十张图片')

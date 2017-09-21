@@ -1,7 +1,7 @@
 /**
- * Vue-html5-editor 2.0.32
+ * Vue-html5-editor 2.0.33
  * https://github.com/PeakTai/vue-html5-editor
- * build at Fri Sep 08 2017 15:10:50 GMT+0800 (中国标准时间)
+ * build at Thu Sep 21 2017 10:01:29 GMT+0800 (中国标准时间)
  */
 
 (function (global, factory) {
@@ -540,7 +540,7 @@ var dashboard$4 = {
     template: template$4,
     data: function data(){
         return {
-            version: "2.0.32"
+            version: "2.0.33"
         }
     }
 };
@@ -806,7 +806,7 @@ var dashboard$10 = {
 
           var str = '';
           for (var i in this$1.list) {
-            str += "<img class=\"test\" src=\"" + (this$1.list[i].url) + "\" alt=\"\"/>";
+            str += "<img src=\"" + (this$1.list[i].url) + "\" alt=\"\"/>";
           }
           if (this.list.length > 10) {
             this.$parent.$emit('errmessage', '单次上传最多十张图片');
